@@ -1,0 +1,27 @@
+{
+  "name": "rshop",
+  "version": "1.0.0",
+  "description": "a project by node and mongo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ICTA-blockchain/rshop"
+  },
+  "author": "denny,shemeema,rk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ICTA-blockchain/rshop/issues"
+  },
+  "homepage": "https://github.com/ICTA-blockchain/rshop#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.4",
+    "nodemon": "^1.18.4"
+  }
+}
