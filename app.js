@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const chalk = require('chalk');
 const path = require('path');
 const app = new express();
-
 //setting ejs
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
@@ -34,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', userPage);
 app.use('/admin', adminPage);
-app.listen(5000, () => {
-  console.log('listening on port'+chalk.blue(' 5000'));
+const port = process.env.PORT || 5000 ;
+app.listen(port, () => {
+  console.log('listening on port'+chalk.blue(port));
 });
