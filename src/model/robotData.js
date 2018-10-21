@@ -7,5 +7,5 @@ let RoboSchema = new Schema({
     Power:Number,
     Price:Number,
 });
-let RoboData = mongoose.model('Robo-data',RoboSchema);
+let RoboData = mongoose.model('Robodata',RoboSchema);
 module.exports= RoboData;

@@ -1,6 +1,8 @@
 const express = require('express');
 const roboData = require('../model/robotData');
+const chalk = require('chalk');
 const adminRouter = express.Router();
+
 const nav = [
   {
     title: 'Home',
@@ -40,17 +42,30 @@ router = () => {
     });
 
     const robo = {
-      Name: req.param.name,
-      Energy: req.param.energy,
-      Power: req.param.power,
-      Price: req.param.price
+      Name: req.body.name,
+      Energy: req.body.energy,
+      Power: req.body.power,
+      Price: req.body.price
     };
     const robot = new roboData(robo);
-    robot.save();
+    robot.save((err, data) => {
+      if (err) {
+        return console.log(chalk.blue(err));
+      }
+      console.log(data);
+    });
     res.redirect('/admin');
   });
-  adminRouter.route('/delrobo').get((req, res) => {
-    res.send('Hello world');
+  adminRouter.route('/delrobo/:id').get((req, res) => {
+    var roboId = req.params.id;
+    console.log(roboId);
+    roboData.findByIdAndRemove(roboId, (err, data) => {
+      if (err) {
+        return console.log(err);
+      }
+      console.log(data);
+      res.send('Deletered successfully');
+    });
   });
 
   return adminRouter;
