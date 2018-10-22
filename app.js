@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', userPage);
 app.use('/admin', adminPage);
-const port = process.env.PORT || 5000 ;
+const port = process.env.PORT || 2255 ;
 app.listen(port, () => {
   console.log('listening on port'+chalk.blue(port));
 });
