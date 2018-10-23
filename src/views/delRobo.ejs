@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-<%=title%>
-</title>
+        <%=title%>
+    </title>
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/_navbar.css">
@@ -34,46 +34,50 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-        <%for (let i=0;i<nav.length;i++){%>
-            <li><a href="<%=nav[i].link%>"><%=nav[i].title%></a></li>
-        <%}%>
-        </ul>
+            <ul class="nav navbar-nav">
+                <%for (let i=0;i<nav.length;i++){%>
+                <li><a href="<%=nav[i].link%>">
+                        <%=nav[i].title%></a></li>
+                <%}%>
+            </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
     <div id="toppad"></div>
 
-    
-<div class="container">
-    <div id="tit">
-        <h1>RoboBay</h1>
-        <h3>Get Robots,Make Your Life Easyer</h3>
-    </div>
-    <div class="row">
 
-  
-    <form id="buyform" method="DELETE" action="/delrobo/">
-
-        <div class="container">
-
-            <div class="row" style="margin-left: 5%">
-                    <div id="robot">
-                    <select class="q col-xs-6 col-sm-6 col-md-4 col-lg-3" required name="Robo">
-                        <%for(let i=0;i<robot.length;i++){%>
-                        <option name="<%=robot[i].Name%>" value="<%=robot[i].Name%>"><%=robot[i].Name%></option>
-                        <%}%>       
-                    </select>
-                </div>
-                <button id="buy" class="q btn btn-primary col-xs-10 col-sm-6 col-md-4 col-lg-3">Delete Now</button>
-            </div>
+    <div class="container">
+        <div id="tit">
+            <h1>RoboBay</h1>
+            <h3>Get Robots,Make Your Life Easyer</h3>
         </div>
+        <div class="row">
 
 
-    </form>
-   
+            <form id="buyform" method="get" action="/admin/delrobot/">
 
-</div>
-</div>
+                <div class="container">
+
+                    <div class="row" style="margin-left: 5%">
+                        <div id="robot">
+                            <select class="q col-xs-6 col-sm-6 col-md-4 col-lg-3" required name="Robo">
+                                <%for(let i=0;i<robot.length;i++){%>
+                                <option name="<%=robot[i].Name%>" value="<%=robot[i]._id%>">
+                                    <%=robot[i].Name%>
+                                </option>
+                                <%}%>
+                            </select>
+                        </div>
+                        <button type="submit" id="buy" class="q btn btn-primary col-xs-10 col-sm-6 col-md-4 col-lg-3">Delete
+                            Now</button>
+                    </div>
+                </div>
+
+
+            </form>
+
+
+        </div>
+    </div>
 
 
 

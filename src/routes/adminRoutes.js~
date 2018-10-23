@@ -60,9 +60,11 @@ router = () => {
     });
   });
   adminRouter.route('/delrobot/').get((req, res) => {
-    const id = req.query.Robo;
+    const id = mongoose.Types.ObjectId(req.query.Robo);
+    console.log(id);
+
   Robodata.find({ _id:id }).remove().exec();
-  res.redirect('/admin');
+ //res.redirect('/admin');
   });
   return adminRouter;
 };
